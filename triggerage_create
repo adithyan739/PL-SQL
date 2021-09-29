@@ -1,0 +1,13 @@
+CREATE OR REPLACE TRIGGER display_age_changes 
+BEFORE DELETE OR INSERT OR UPDATE ON customers 
+FOR EACH ROW 
+WHEN (NEW.ID > 0) 
+DECLARE 
+   age_diff number; 
+BEGIN 
+   age_diff := :NEW.age  - :OLD.age; 
+   dbms_output.put_line('Old age: ' || :OLD.age); 
+   dbms_output.put_line('New age: ' || :NEW.age); 
+   dbms_output.put_line('Age difference: ' || age_diff); 
+END; 
+/
