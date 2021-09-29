@@ -1,5 +1,5 @@
 declare
-str1 varchar2(50):='$str';
+str1 varchar2(50):=:str1;
 str2 varchar2(50);
 len number;
 i number;
