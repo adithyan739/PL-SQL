@@ -1,0 +1,15 @@
+declare
+n number;
+sum1 number:=0;
+avg1 float;
+begin
+n:=:n;
+for i in 1..n
+loop
+sum1:=sum1+i;
+end loop;
+avg1:=sum1/n;
+dbms_output.put_line('Sum:'||sum1);
+dbms_output.put_line('Avg:'||avg1);
+end;
+/
