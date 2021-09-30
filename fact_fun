@@ -1,0 +1,20 @@
+DECLARE
+num number;
+factorial number;
+FUNCTION fact(a number)
+RETURN number
+IS
+f number;
+BEGIN
+ IF a=0 THEN
+ f:=1;
+ ELSE
+ f:=a*fact(a-1);
+ END IF;
+ RETURN f;
+ END;
+ BEGIN
+ num:=5;
+ factorial:=fact(num);
+ dbms_output.put_line('Factorial of '||num||' is '||factorial);
+ END;
